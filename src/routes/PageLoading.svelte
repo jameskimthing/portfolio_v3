@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { basePageLoadingTime } from '$lib/menu';
+
 	export let showLoading: boolean;
 
 	let outer: string = '';
@@ -17,9 +19,9 @@
 
 {#if showPageLoading}
 	<section
-		class="bg-black fixed flex w-full h-full items-center justify-center z-50 transition-transform duration-1000 {outer}"
+		class="bg-slate-900 fixed flex w-full h-full items-center justify-center z-50 transition-transform duration-[{basePageLoadingTime}ms] {outer}"
 	>
-		<div class="flex-col transition-opacity duration-1000 {inner}">
+		<div class="flex-col transition-opacity duration-[{basePageLoadingTime}ms] {inner}">
 			<div class="w-16 h-16">
 				<svg viewBox="0 0 860.1 876.5">
 					<path

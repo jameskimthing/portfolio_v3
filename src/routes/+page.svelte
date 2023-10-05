@@ -6,3 +6,4 @@
 <Menu />
 
 <Introduction />
+<section class="h-screen" />

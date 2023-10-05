@@ -7,6 +7,8 @@
 	export let delay: number = 0;
 	export let callback: Function | undefined = undefined;
 
+	export let extraClasses: string = '';
+
 	let element: HTMLDivElement;
 	onMount(() =>
 		observeObject({
@@ -20,6 +22,6 @@
 	// onMount(() => observeObject(element, direction, speed, delay));
 </script>
 
-<div bind:this={element} class="opacity-0 transition-all">
+<div bind:this={element} class="opacity-0 transition-all {extraClasses}">
 	<slot />
 </div>
