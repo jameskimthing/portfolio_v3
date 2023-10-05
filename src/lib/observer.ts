@@ -18,7 +18,7 @@ let idGenerator: number = 0;
  */
 function observeObject(options: {
 	element: HTMLElement;
-	delay: number;
+	delay?: number;
 	direction?: 'left' | 'right' | 'up' | 'down' | 'fade';
 	speed?: 'slow' | 'medium' | 'fast';
 	callback?: Function;
@@ -29,7 +29,8 @@ function observeObject(options: {
 	// "element", which can only be accesed after the "onMount()" function
 	if (!observer) observer = makeIntersectionObserver();
 
-	const { element, direction, speed, delay, callback } = options;
+	let { element, direction, speed, delay, callback } = options;
+	if (!delay) delay = 0;
 
 	idGenerator++;
 	element.id = `${idGenerator}`;
@@ -89,7 +90,6 @@ function makeIntersectionObserver(): IntersectionObserver {
 			if (entry.isIntersecting) {
 				if (callback) {
 					await new Promise((r) => setTimeout(r, delay));
-					console.log('CALLBACK');
 					await callback();
 					observer.unobserve(entry.target);
 					return;
@@ -114,4 +114,28 @@ function makeIntersectionObserver(): IntersectionObserver {
 	});
 }
 
-export { observeObject };
+let menuObserver: IntersectionObserver;
+const menuElements: { [id: string]: Function } = {};
+function initializeObserver() {
+	if (!observer) observer = makeIntersectionObserver();
+	if (!menuObserver) menuObserver = makeMenuIntersectionObserver();
+}
+
+function makeMenuIntersectionObserver() {
+	return new IntersectionObserver((entries) =>
+		entries.forEach((entry) => {
+			if (entry.isIntersecting) {
+				const callback = menuElements[entry.target.id];
+				callback(entry.target.id);
+			}
+		})
+	);
+}
+
+function observeMenuObject(element: HTMLElement, callback: Function) {
+	if (!menuObserver) menuObserver = makeMenuIntersectionObserver();
+	menuElements[element.id] = callback;
+	menuObserver.observe(element);
+}
+
+export { observeObject, initializeObserver, observeMenuObject };

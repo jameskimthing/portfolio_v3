@@ -19,7 +19,7 @@
 
 {#if showPageLoading}
 	<section
-		class="bg-slate-900 fixed flex w-full h-full items-center justify-center z-50 transition-transform duration-[{basePageLoadingTime}ms] {outer}"
+		class="bg-black fixed flex w-full h-full items-center justify-center z-50 transition-transform duration-[{basePageLoadingTime}ms] {outer}"
 	>
 		<div class="flex-col transition-opacity duration-[{basePageLoadingTime}ms] {inner}">
 			<div class="w-16 h-16">

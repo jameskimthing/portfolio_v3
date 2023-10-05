@@ -2,9 +2,11 @@
 	import { onMount } from 'svelte';
 	import '../app.css';
 	import PageLoading from './PageLoading.svelte';
+	import { initializeObserver } from '$lib/observer';
 
 	let showLoading: boolean = true;
 	onMount(async () => {
+		initializeObserver();
 		if (document.readyState === 'complete') {
 			await new Promise((r) => setTimeout(r, 300));
 			showLoading = false;
@@ -24,6 +26,6 @@
 </svelte:head>
 
 <PageLoading {showLoading} />
-<div class="w-full h-full bg-black text-amber-100 font-mono">
+<div class="w-full h-full bg-red-800 text-white font-mono">
 	<slot />
 </div>
