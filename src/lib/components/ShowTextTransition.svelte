@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
 	import { observeObject } from '$lib/observer';
 	import { generateRandomString } from '$lib/utility';
 	import { onMount } from 'svelte';
@@ -53,4 +53,4 @@
 
 <span bind:this={element} class="opacity-0 transition-opacity">
 	<slot />
-</span>
+</span> -->

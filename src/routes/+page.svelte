@@ -4,6 +4,7 @@
 	import Introduction from './Introduction.svelte';
 	import Skills from './Skills.svelte';
 	import { initializeMenu } from '$lib/menu';
+	import Divider from '$lib/components/Divider.svelte';
 
 	const sections: string[] = [
 		'introduction',
@@ -16,11 +17,14 @@
 	onMount(() => initializeMenu(sections));
 </script>
 
+<!-- 
+	Gap between elements is 2
+	For default padding between, have it as 5
+ -->
+
 <Menu {sections} />
 
 <Introduction />
-<!-- <section class="h-screen w-full bg-slate-700" /> -->
-<div class="h-44" />
 <Skills />
 <section class="h-screen w-full bg-slate-700" />
 <section id="professional_experience" class="h-96 w-96 bg-red-700" />

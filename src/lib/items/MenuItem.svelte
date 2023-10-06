@@ -8,7 +8,12 @@
 	onMount(async () => {
 		const svgText: string = await (await fetch(icon)).text();
 		const svg = new DOMParser().parseFromString(svgText, 'image/svg+xml').documentElement;
-		svg.classList.add('hover:fill-yellow', 'hover:scale-110', 'transition-all', 'duration-0');
+		svg.classList.add(
+			'hover:fill-bright-yellow',
+			'hover:scale-110',
+			'transition-all',
+			'duration-0'
+		);
 		container.appendChild(svg);
 	});
 </script>

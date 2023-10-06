@@ -37,7 +37,7 @@
 				link="https://www.linkedin.com/in/james-kim-282750252/"
 				icon="/icons/linkedin.svg"
 			/>
-			<div class="w-0.5 h-80 mt-4 bg-amber-100" />
+			<div class="w-0.5 h-80 mt-2 bg-amber-100" />
 		</div>
 
 		<div class="flex flex-col gap-2 mb-5 ml-5 mt-auto">

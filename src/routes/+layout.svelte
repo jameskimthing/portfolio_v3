@@ -2,11 +2,11 @@
 	import { onMount } from 'svelte';
 	import '../app.css';
 	import PageLoading from './PageLoading.svelte';
-	import { initializeObserver } from '$lib/observer';
+	import { makeIntersectionObserver } from '$lib/observer';
 
 	let showLoading: boolean = true;
 	onMount(async () => {
-		initializeObserver();
+		makeIntersectionObserver();
 		if (document.readyState === 'complete') {
 			await new Promise((r) => setTimeout(r, 300));
 			showLoading = false;

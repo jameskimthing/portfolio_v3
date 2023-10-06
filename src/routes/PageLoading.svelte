@@ -19,9 +19,13 @@
 
 {#if showPageLoading}
 	<section
-		class="bg-black fixed flex w-full h-full items-center justify-center z-50 transition-transform duration-[{basePageLoadingTime}ms] {outer}"
+		class="bg-black fixed flex w-full h-full items-center justify-center z-50 transition-transform {outer}"
+		style="transition-duration: {basePageLoadingTime}ms;"
 	>
-		<div class="flex-col transition-opacity duration-[{basePageLoadingTime}ms] {inner}">
+		<div
+			class="flex-col transition-opacity {inner}"
+			style="transition-duration: {basePageLoadingTime}ms;"
+		>
 			<div class="w-16 h-16">
 				<svg viewBox="0 0 860.1 876.5">
 					<path
