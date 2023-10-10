@@ -1,20 +1,11 @@
 <script lang="ts">
-	import Menu from '$lib/items/Menu.svelte';
 	import { onMount } from 'svelte';
+	import { initializeMenu } from '$lib/menu';
+	import Menu from '$lib/items/Menu.svelte';
 	import Introduction from './Introduction.svelte';
 	import Skills from './Skills.svelte';
-	import { initializeMenu } from '$lib/menu';
-	import Divider from '$lib/components/Divider.svelte';
 
-	const sections: string[] = [
-		'introduction',
-		'skills',
-		'professional_experience',
-		'certificates',
-		'past_projects'
-	];
-
-	onMount(() => initializeMenu(sections));
+	onMount(() => initializeMenu());
 </script>
 
 <!-- 
@@ -22,13 +13,10 @@
 	For default padding between, have it as 5
  -->
 
-<Menu {sections} />
+<Menu />
 
 <Introduction />
 <Skills />
-<section class="h-screen w-full bg-slate-700" />
-<section id="professional_experience" class="h-96 w-96 bg-red-700" />
-<section class="h-screen w-full bg-slate-700" />
-<section id="certificates" class="h-96 w-96 bg-blue" />
-<section class="h-screen w-full bg-slate-700" />
-<section id="past_projects" class="h-96 w-96 bg-green-700" />
+<section id="professional_experience" class="w-full h-screen bg-red-700" />
+<section id="certificates" class="w-full h-screen bg-blue" />
+<section id="past_projects" class="w-full h-screen bg-green-700" />

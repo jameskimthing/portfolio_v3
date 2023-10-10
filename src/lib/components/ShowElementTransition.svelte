@@ -5,7 +5,8 @@
 	// export let speed: 'slow' | 'medium' | 'fast' = 'medium';
 	export let direction: 'left' | 'right' | 'up' | 'down' | 'fade' = 'right';
 	export let delay: number = 0;
-	export let repeat: boolean = false;
+	export let repeat: boolean = true;
+	export let callback: Function = () => {};
 	export let extraClasses: string = '';
 
 	let element: HTMLDivElement;
@@ -32,8 +33,11 @@
 			element: element,
 			delay: delay,
 			onIntersecting: () => {
-				element.classList.remove('opacity-0');
-				element.classList.remove(classAdded);
+				callback();
+				if (element) {
+					element.classList.remove('opacity-0');
+					element.classList.remove(classAdded);
+				}
 			},
 			onNotIntersecting: prepareElementTransition,
 			repeat: repeat

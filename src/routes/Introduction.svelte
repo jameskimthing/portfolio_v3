@@ -6,6 +6,7 @@
 
 	let scrollY: number = 0;
 	let canShowBounce = false;
+
 	onMount(async () => {
 		await new Promise((r) => setTimeout(r, basePageLoadingTime + 7000));
 		canShowBounce = true;
@@ -14,16 +15,16 @@
 
 <svelte:window bind:scrollY />
 
-<section id="introduction" class="bg-black w-full h-screen px-8 pl-32 flex flex-col justify-center">
+<section id="introduction" class="flex flex-col justify-center w-full h-screen px-8 pl-32 bg-black">
 	<ShowElementTransition direction="down" delay={basePageLoadingTime + 150}>
-		<div class="text-2xl text-white pb-3">Hello! I am</div>
+		<div class="pb-3 text-2xl text-white">Hello! I am</div>
 	</ShowElementTransition>
 	<ShowElementTransition direction="down" delay={basePageLoadingTime + 300}>
-		<div class="text-8xl text-bright-yellow font-bold -ml-4 whitespace-nowrap">James Kim,</div>
+		<div class="-ml-4 font-bold text-8xl text-bright-yellow whitespace-nowrap">James Kim,</div>
 	</ShowElementTransition>
 
 	<ShowElementTransition direction="down" delay={basePageLoadingTime + 450}>
-		<div class="text-5xl text-amber-100 font-bold whitespace-nowrap">a software developer.</div>
+		<div class="text-5xl font-bold text-amber-100 whitespace-nowrap">a software developer.</div>
 	</ShowElementTransition>
 
 	<ShowElementTransition direction="down" delay={basePageLoadingTime + 600}>
@@ -36,8 +37,7 @@
 	{#if scrollY === 0 && canShowBounce}
 		<div
 			transition:fade
-			class="absolute bottom-5 ml-auto mr-auto inset-x-0 bg-amber-100 w-5 h-5 rounded-full animate-bounce"
+			class="absolute inset-x-0 w-5 h-5 ml-auto mr-auto rounded-full bottom-5 bg-amber-100 animate-bounce"
 		/>
 	{/if}
 </section>
-<div class="h-[1px] bg-black w-full" />
