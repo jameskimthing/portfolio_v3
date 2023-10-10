@@ -1,18 +1,10 @@
 import { writable, type Writable } from 'svelte/store';
 import { observeElement } from './observer';
 
-const sections: string[] = [
-	'introduction',
-	'skills',
-	'professional_experience',
-	'certificates',
-	'past_projects'
-];
-
 const basePageLoadingTime: number = 1000;
 const currentMenuSection: Writable<string> = writable('introduction');
 
-function initializeMenu() {
+function initializeMenu(sections: string[]) {
 	for (const section of sections) {
 		const parent = document.getElementById(section);
 		const element = document.createElement('div');
@@ -43,4 +35,4 @@ function initializeMenu() {
 	}
 }
 
-export { basePageLoadingTime, initializeMenu, currentMenuSection, sections };
+export { basePageLoadingTime, initializeMenu, currentMenuSection };

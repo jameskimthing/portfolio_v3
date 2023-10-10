@@ -2,7 +2,7 @@
 	import { observeElement } from '$lib/observer';
 	import { onMount } from 'svelte';
 
-	// export let speed: 'slow' | 'medium' | 'fast' = 'medium';
+	export let speed: 'slow' | 'medium' = 'medium';
 	export let direction: 'left' | 'right' | 'up' | 'down' | 'fade' = 'right';
 	export let delay: number = 0;
 	export let repeat: boolean = true;
@@ -12,6 +12,9 @@
 	let element: HTMLDivElement;
 
 	onMount(() => {
+		if (speed === 'medium') element.classList.add('duration-500');
+		if (speed === 'slow') element.classList.add('duration-1000');
+
 		let classAdded: string = '';
 		const dirTo = (str: string) => str === direction;
 		function add(str: string) {
@@ -45,6 +48,6 @@
 	});
 </script>
 
-<div bind:this={element} class="transition-all duration-500 {extraClasses}">
+<div bind:this={element} class="transition-all {extraClasses}">
 	<slot />
 </div>

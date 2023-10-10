@@ -1,7 +1,9 @@
 <script lang="ts">
 	import ShowElementTransition from '$lib/components/ShowElementTransition.svelte';
-	import { basePageLoadingTime, currentMenuSection, sections } from '$lib/menu';
+	import { basePageLoadingTime, currentMenuSection } from '$lib/menu';
 	import MenuItem from './MenuItem.svelte';
+
+	export let sections: string[];
 
 	function capitalize(str: string) {
 		const capFirst = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);

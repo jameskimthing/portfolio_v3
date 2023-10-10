@@ -1,7 +1,25 @@
 <script lang="ts">
 	import ShowElementTransition from '$lib/components/ShowElementTransition.svelte';
-	import SkillSection from '$lib/sections/SkillSection.svelte';
-	import { academicSkills, developmentSkills } from '$lib/sections/skills';
+	import SkillSection from '$lib/sections/components/SkillSection.svelte';
+
+	interface Skill {
+		label: string;
+		confidence: number;
+	}
+
+	const developmentSkills: Skill[] = [
+		{ label: 'websites', confidence: 80 },
+		{ label: 'mobile', confidence: 70 },
+		{ label: 'backend', confidence: 70 },
+		{ label: 'machine_learning', confidence: 50 },
+		{ label: 'games', confidence: 40 }
+	];
+
+	const academicSkills: Skill[] = [
+		{ label: 'calculus', confidence: 85 },
+		{ label: 'physics', confidence: 80 },
+		{ label: 'english', confidence: 75 }
+	];
 </script>
 
 <!-- 
@@ -12,10 +30,10 @@
 
 -->
 
-<section id="skills" class="flex flex-col items-center justify-center w-full h-screen bg-dark-blue">
+<section id="development" class="flex flex-col items-center justify-center w-full h-screen bg-blue">
 	<div class="max-w-[1000px] flex flex-col">
 		<ShowElementTransition direction="up" delay={300}>
-			<div class="font-bold text-7xl text-bright-yellow whitespace-nowrap">My Skills</div>
+			<div class="font-bold text-7xl text-bright-yellow whitespace-nowrap">Development</div>
 		</ShowElementTransition>
 		<ShowElementTransition direction="up" delay={450}>
 			<div class="mt-5 text-xl text-slate-200">

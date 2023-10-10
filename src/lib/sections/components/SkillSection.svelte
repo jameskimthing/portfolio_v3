@@ -39,7 +39,7 @@
 
 <div
 	bind:this={outerElement}
-	class="w-full transition-transform duration-500 origin-left rounded bg-blue"
+	class="w-full transition-transform duration-500 origin-left bg-opacity-50 rounded bg-dark-blue"
 >
 	<div
 		class="w-10 text-lg rounded bg-amber-100 pl-3 py-0.5 text-dark-blue font-sans whitespace-nowrap transition-transform duration-500 origin-left"
