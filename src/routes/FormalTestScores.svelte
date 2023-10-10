@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ShowElementTransition from '$lib/components/ShowElementTransition.svelte';
-	import Score from './components/Score.svelte';
-	import SubScore from './components/SubScore.svelte';
+	import Score from '$lib/sectionsComponents/Score.svelte';
+	import SubScore from '$lib/sectionsComponents/SubScore.svelte';
 
 	interface Score {
 		label: string;
@@ -25,7 +25,8 @@
 
 <section
 	id="formal_test_scores"
-	class="flex flex-row items-center justify-center w-full h-screen gap-10 bg-dark-blue"
+	class="flex flex-row items-center justify-center w-full h-screen gap-10"
+	style="background-color: #000b2b;"
 >
 	<div class="w-[600px] flex flex-col items-start">
 		<ShowElementTransition direction="up" delay={300}>
@@ -49,7 +50,7 @@
 					</div>
 				</Score>
 			</ShowElementTransition>
-			<ShowElementTransition direction="up" speed="slow" delay={750}>
+			<ShowElementTransition direction="up" speed="slow" delay={800}>
 				<Score label="TOEFL" extraLabel="total" score={111} maxScore={120}>
 					<div class="flex flex-col gap-2 p-4">
 						<SubScore label="Reading" score={29} maxScore={30} />
@@ -59,7 +60,7 @@
 					</div>
 				</Score>
 			</ShowElementTransition>
-			<ShowElementTransition direction="up" speed="slow" delay={900}>
+			<ShowElementTransition direction="up" speed="slow" delay={1000}>
 				<Score label="GED" extraLabel="average" score={183} maxScore={200}>
 					<div class="flex flex-col gap-2 p-4">
 						<SubScore label="Language Arts" score={174} maxScore={200} />
@@ -73,13 +74,13 @@
 
 		<div class="h-10" />
 
-		<ShowElementTransition direction="up" speed="slow" delay={1150}>
+		<ShowElementTransition direction="up" speed="slow" delay={1100}>
 			<div class="text-4xl text-amber-200">AP Scores</div>
 		</ShowElementTransition>
 		<div class="flex flex-row gap-5">
 			{#each ApScores as { label, score, maxScore }, i}
 				<div class="flex flex-col items-center gap-2">
-					<ShowElementTransition direction="up" speed="slow" delay={1150 + 150 * i}>
+					<ShowElementTransition direction="up" speed="slow" delay={1100 + 200 * i}>
 						<Score smallerLabel largerScore {label} {score} {maxScore} scoreNextLine={false} />
 					</ShowElementTransition>
 				</div>

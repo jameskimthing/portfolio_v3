@@ -5,6 +5,19 @@ const basePageLoadingTime: number = 1000;
 const currentMenuSection: Writable<string> = writable('introduction');
 
 function initializeMenu(sections: string[]) {
+	let sectionMenus: string[] = [];
+	const setMenu = () => currentMenuSection.set(sectionMenus[0]);
+
+	function add(section: string) {
+		sectionMenus.unshift(section);
+		setMenu();
+	}
+
+	function remove(section: string) {
+		sectionMenus = sectionMenus.filter((item) => item !== section);
+		setMenu();
+	}
+
 	for (const section of sections) {
 		const parent = document.getElementById(section);
 		const element = document.createElement('div');
@@ -14,20 +27,18 @@ function initializeMenu(sections: string[]) {
 			'top-1/2',
 			'left-1/2',
 			'transform',
-			'-translate-x-1/2',
 			'-translate-y-1/2',
 			'w-[1px]',
-			'h-[1px]',
 			'pointer-events-none'
-			// 'hidden',
 		);
+		element.style.height = '50vh';
 		parent?.appendChild(element);
 
 		if (element) {
 			observeElement({
 				element: element,
-				onIntersecting: () => currentMenuSection.set(section),
-				onNotIntersecting: () => {},
+				onIntersecting: () => add(section),
+				onNotIntersecting: () => remove(section),
 				delay: 0,
 				repeat: true
 			});

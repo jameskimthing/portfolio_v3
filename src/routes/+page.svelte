@@ -2,18 +2,20 @@
 	import { onMount } from 'svelte';
 	import { initializeMenu } from '$lib/menu';
 	import Menu from '$lib/items/Menu.svelte';
-	import Introduction from '../lib/sections/Introduction.svelte';
-	import Development from '../lib/sections/Development.svelte';
-	import FormalTestScores from '$lib/sections/FormalTestScores.svelte';
+	import Certifications from './Certifications.svelte';
+	import Introduction from './Introduction.svelte';
+	import FormalTestScores from './FormalTestScores.svelte';
+	import Development from './Development.svelte';
+	import ProfessionalExperience from './ProfessionalExperience.svelte';
 
 	onMount(() => initializeMenu(sections));
 
 	const sections: string[] = [
 		'introduction',
 		'formal_test_scores',
-		'development',
+		'certifications',
 		'professional_experience',
-		'certificates',
+		'programming',
 		'past_projects'
 	];
 </script>
@@ -27,7 +29,7 @@
 
 <Introduction />
 <FormalTestScores />
+<Certifications />
+<ProfessionalExperience />
 <Development />
-<section id="professional_experience" class="w-full h-screen bg-red-700" />
-<section id="certificates" class="w-full h-screen bg-blue" />
 <section id="past_projects" class="w-full h-screen bg-green-700" />

@@ -123,7 +123,7 @@
 					{/if}
 					<div class="flex {scoreNextLine ? 'flex-col' : 'flex-row items-end'}">
 						<div class="{largerScore ? 'text-6xl' : 'text-5xl'} text-bright-yellow">{score}</div>
-						<div class="ml-auto {scoreNextLine ? '-mt-2' : 'mb-1'} text-sm">{'/' + maxScore}</div>
+						<div class="ml-auto {scoreNextLine ? '-mt-2' : 'mb-2'} text-sm">{'/' + maxScore}</div>
 					</div>
 				</div>
 			</div>
@@ -145,6 +145,6 @@
 	}
 
 	.circle {
-		animation: stroke 2s ease-out forwards;
+		animation: stroke 3s ease-out forwards;
 	}
 </style>

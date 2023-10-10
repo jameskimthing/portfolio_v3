@@ -39,10 +39,10 @@
 
 <div
 	bind:this={outerElement}
-	class="w-full transition-transform duration-500 origin-left bg-opacity-50 rounded bg-dark-blue"
+	class="w-full transition-transform duration-500 origin-left bg-opacity-50 rounded cursor-pointer bg-dark-blue group"
 >
 	<div
-		class="w-10 text-lg rounded bg-amber-100 pl-3 py-0.5 text-dark-blue font-sans whitespace-nowrap transition-transform duration-500 origin-left"
+		class="w-10 text-lg rounded bg-amber-100 pl-3 py-0.5 text-dark-blue font-sans whitespace-nowrap transition-all duration-500 origin-left group-hover:bg-amber-300"
 		bind:this={innerElement}
 		style="width: {confidence}%;"
 	>

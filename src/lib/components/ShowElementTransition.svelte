@@ -23,10 +23,10 @@
 		}
 
 		function prepareElementTransition() {
-			if (dirTo('left')) add('translate-x-full');
-			else if (dirTo('right')) add('-translate-x-full');
-			else if (dirTo('up')) add('translate-y-full');
-			else if (dirTo('down')) add('-translate-y-full');
+			if (dirTo('left')) add('translate-x-1/2');
+			else if (dirTo('right')) add('-translate-x-1/2');
+			else if (dirTo('up')) add('translate-y-1/2');
+			else if (dirTo('down')) add('-translate-y-1/2');
 
 			element.classList.add('opacity-0');
 		}
