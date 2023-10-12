@@ -65,7 +65,8 @@
 	{#if showTooltip}
 		<div class="absolute left-0 z-50 p-4 -translate-x-full -translate-y-1/2 top-1/2">
 			<div
-				class="overflow-hidden rounded-lg shadow bg-blue shadow-black"
+				class="overflow-hidden rounded-lg shadow shadow-black"
+				style="background-color: #102a4a;"
 				transition:slide={{ axis: 'x' }}
 			>
 				<slot />

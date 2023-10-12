@@ -23,7 +23,7 @@
 	on:pointerleave={pointerLeave}
 >
 	<ShowElementTransition direction="up" {delay}>
-		<h1 class="text-4xl transition-all text-amber-100 w-fit">
+		<h1 class="text-4xl transition-all text-bright-yellow w-fit">
 			{text}
 			<div
 				class="w-full h-1 transition-transform duration-300 origin-left scale-0 bg-amber-100 group-hover:scale-100"

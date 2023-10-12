@@ -15,7 +15,10 @@
 
 <svelte:window bind:scrollY />
 
-<section id="introduction" class="flex flex-col justify-center w-full h-screen px-8 pl-32 bg-black">
+<section
+	id="introduction"
+	class="flex flex-col justify-center w-full min-h-screen px-8 pl-32 bg-black"
+>
 	<ShowElementTransition direction="down" delay={basePageLoadingTime + 150}>
 		<div class="pb-3 text-2xl text-white">Hello! I am</div>
 	</ShowElementTransition>

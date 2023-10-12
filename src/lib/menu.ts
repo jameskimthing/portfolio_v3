@@ -30,8 +30,12 @@ function initializeMenu(sections: string[]) {
 			'-translate-y-1/2',
 			'w-[1px]',
 			'pointer-events-none'
+			// 'z-50',
+			// 'bg-white'
 		);
-		element.style.height = '50vh';
+		element.style.height = `${
+			(parent?.clientHeight ?? window.innerHeight) - Math.min(100, window.innerHeight * 0.5)
+		}px`;
 		parent?.appendChild(element);
 
 		if (element) {

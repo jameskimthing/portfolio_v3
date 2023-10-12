@@ -7,6 +7,7 @@
 	import FormalTestScores from './FormalTestScores.svelte';
 	import Development from './Development.svelte';
 	import ProfessionalExperience from './ProfessionalExperience.svelte';
+	import PastProjects from './PastProjects.svelte';
 
 	onMount(() => initializeMenu(sections));
 
@@ -15,8 +16,8 @@
 		'formal_test_scores',
 		'certifications',
 		'professional_experience',
-		'programming',
 		'past_projects'
+		// 'programming',
 	];
 </script>
 
@@ -31,5 +32,5 @@
 <FormalTestScores />
 <Certifications />
 <ProfessionalExperience />
-<Development />
-<section id="past_projects" class="w-full h-screen bg-green-700" />
+<PastProjects />
+<!-- <Development /> -->

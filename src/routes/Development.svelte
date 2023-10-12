@@ -1,6 +1,6 @@
 <script lang="ts">
 	import ShowElementTransition from '$lib/components/ShowElementTransition.svelte';
-	import SkillSection from '$lib/sectionsComponents/SkillSection.svelte';
+	import SkillSection from '$lib/sections/development/SkillSection.svelte';
 
 	interface Skill {
 		label: string;
@@ -23,7 +23,10 @@
 								| content  |
 
 -->
-<section id="programming" class="flex flex-col items-center justify-center w-full h-screen bg-blue">
+<section
+	id="programming"
+	class="flex flex-col items-center justify-center w-full min-h-screen bg-blue"
+>
 	<div class="max-w-[1000px] flex flex-col gap-2">
 		<ShowElementTransition direction="up" delay={300}>
 			<div class="font-bold text-7xl text-bright-yellow whitespace-nowrap">Programming</div>

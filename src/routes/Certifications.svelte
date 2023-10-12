@@ -1,11 +1,37 @@
 <script lang="ts">
-	import CertificationHeading from '$lib/sectionsComponents/CertificationHeading.svelte';
-	import Certificate from '../lib/sectionsComponents/Certificate.svelte';
+	import CertificationHeading from '$lib/sections/certifications/CertificationHeading.svelte';
+	import Certificate from '../lib/sections/certifications/Certificate.svelte';
+
+	interface Certification {
+		label: string;
+		src: string;
+	}
+
+	const professionalCertificates: Certification[] = [
+		{ label: 'AWS Foundations', src: 'aws.png' },
+		{ label: 'Google for Education Level 1', src: 'google_for_education.png' },
+		{ label: 'Tensorflow Developer Certificate', src: 'tensorflow.png' }
+	];
+
+	const otherCertificates: Certification[] = [
+		{ label: 'Flutter Course', src: 'aws_flutter.jpg' },
+		{ label: 'AWS Course', src: 'aws_udemy.jpg' },
+		{ label: 'Calculus BC', src: 'calculus_bc.png' },
+		{ label: 'CS50 AI', src: 'cs50ai.png' },
+		{ label: 'CS50 Game Development', src: 'cs50g.png' },
+		{ label: 'CS50x', src: 'cs50x.png' },
+		{ label: 'Deeplearning AI Tensorflow', src: 'deeplearning_ai_tensorflow.png' },
+		{ label: 'Single Variable Calculus', src: 'single_variable_calculus.png' },
+		{ label: 'Tensorflow 1', src: 'tensorflow_1.png' },
+		{ label: 'Tensorflow 2', src: 'tensorflow_2.png' },
+		{ label: 'Tensorflow 3', src: 'tensorflow_3.png' },
+		{ label: 'Tensorflow 4', src: 'tensorflow_4.png' }
+	];
 </script>
 
 <section
 	id="certifications"
-	class="flex flex-col items-center justify-center w-full h-screen"
+	class="flex flex-col items-center justify-center w-full min-h-screen"
 	style="background-color: #001a3a;"
 >
 	<!-- style="background-color: #000d2d;" -->
@@ -13,29 +39,21 @@
 		These are my certifications after completing an official exam, namely from Google and Amazon Web
 		Services in the case here.
 	</CertificationHeading>
-	<div class="flex flex-wrap gap-5 pt-5">
-		<Certificate delay={450} src="certifications/professional/aws.png" />
-		<Certificate delay={550} src="certifications/professional/google_for_education.png" />
-		<Certificate delay={660} src="certifications/professional/tensorflow.png" />
+	<div class="flex flex-wrap gap-5 py-2">
+		{#each professionalCertificates as { label, src }, i}
+			<Certificate {label} src={'certifications/professional/' + src} delay={350 + i * 100} />
+		{/each}
 	</div>
-	<div class="h-10" />
+	<div class="h-14" />
 	<CertificationHeading text="Other Certifications" delay={450}>
 		These are from completing online courses from sites such as Udemy, Edx, and Coursera. Despite
 		the ones here, most of the courses I have taken did not offer any sort of free certificate,
 		therefore was not included in this list.
 	</CertificationHeading>
-	<div class="grid grid-cols-4 gap-5 pt-5">
-		<Certificate delay={600} src="certifications/courses/aws_flutter.jpg" />
-		<Certificate delay={700} src="certifications/courses/aws_udemy.jpg" />
-		<Certificate delay={800} src="certifications/courses/calculus_bc.png" />
-		<Certificate delay={900} src="certifications/courses/cs50ai.png" />
-		<Certificate delay={1000} src="certifications/courses/cs50g.png" />
-		<Certificate delay={1100} src="certifications/courses/cs50x.png" />
-		<Certificate delay={1200} src="certifications/courses/deeplearning_ai_tensorflow.png" />
-		<Certificate delay={1300} src="certifications/courses/single_variable_calculus.png" />
-		<Certificate delay={1400} src="certifications/courses/tensorflow_1.png" />
-		<Certificate delay={1500} src="certifications/courses/tensorflow_2.png" />
-		<Certificate delay={1600} src="certifications/courses/tensorflow_3.png" />
-		<Certificate delay={1700} src="certifications/courses/tensorflow_4.png" />
+	<div class="grid grid-cols-4 gap-5 py-2">
+		<!-- <Certificate label="Flutter Course" delay={600} src="certifications/courses/aws_flutter.jpg" /> -->
+		{#each otherCertificates as { label, src }, i}
+			<Certificate {label} src={'certifications/courses/' + src} delay={500 + i * 100} />
+		{/each}
 	</div>
 </section>

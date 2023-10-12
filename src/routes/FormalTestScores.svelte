@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ShowElementTransition from '$lib/components/ShowElementTransition.svelte';
-	import Score from '$lib/sectionsComponents/Score.svelte';
-	import SubScore from '$lib/sectionsComponents/SubScore.svelte';
+	import Score from '$lib/sections/formalTestScores/Score.svelte';
+	import SubScore from '$lib/sections/formalTestScores/SubScore.svelte';
 
 	interface Score {
 		label: string;
@@ -25,7 +25,7 @@
 
 <section
 	id="formal_test_scores"
-	class="flex flex-row items-center justify-center w-full h-screen gap-10"
+	class="flex flex-row items-center justify-center w-full min-h-screen gap-10"
 	style="background-color: #000b2b;"
 >
 	<div class="w-[600px] flex flex-col items-start">
