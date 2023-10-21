@@ -12,7 +12,7 @@
 	const ApScores: Score[] = [
 		{ label: 'Physics 1', score: 5, maxScore: 5 },
 		{ label: 'Comp. Science A', score: 5, maxScore: 5 },
-		{ label: 'Calculus BC', score: 5, maxScore: 5 }
+		{ label: 'Calc. BC', score: 5, maxScore: 5 }
 	];
 
 	const GedScores: Score[] = [
@@ -25,15 +25,17 @@
 
 <section
 	id="formal_test_scores"
-	class="flex flex-row items-center justify-center w-full min-h-screen gap-10"
+	class="flex flex-col items-center justify-center w-full min-h-screen gap-5 xl:flex-row xl:gap-10"
 	style="background-color: #000b2b;"
 >
-	<div class="w-[600px] flex flex-col items-start">
+	<div class="px-5 md:px-0 md:w-[550px] 2xl:w-[600px] flex flex-col items-center xl:items-start">
 		<ShowElementTransition direction="up" delay={300}>
-			<div class="text-5xl font-bold text-bright-yellow">Formal Test Scores</div>
+			<div class="text-3xl font-bold text-center xl:font-normal xl:text-5xl text-bright-yellow">
+				Formal Test Scores
+			</div>
 		</ShowElementTransition>
 		<ShowElementTransition direction="up" delay={450}>
-			<div class="mt-5 text-xl text-slate-200">
+			<div class="mt-2 text-center xl:text-xl xl:mt-5 xl:text-left text-slate-200">
 				My test scores are a culmination of my studies in academics, learned solely through online
 				resources such as khan academy, youtube, edx, and many more.
 			</div>
@@ -41,7 +43,7 @@
 	</div>
 
 	<section class="flex flex-col items-center">
-		<div class="flex flex-row gap-5">
+		<div class="flex flex-row gap-1 sm:gap-5">
 			<ShowElementTransition direction="up" speed="slow" delay={600}>
 				<Score label="SAT" extraLabel="total" score={1500} maxScore={1600}>
 					<div class="flex flex-col gap-2 p-4">
@@ -72,12 +74,12 @@
 			</ShowElementTransition>
 		</div>
 
-		<div class="h-10" />
+		<div class="h-5 xl:h-10" />
 
 		<ShowElementTransition direction="up" speed="slow" delay={1100}>
-			<div class="text-4xl text-amber-200">AP Scores</div>
+			<div class="text-2xl lg:text-4xl text-amber-200">AP Scores</div>
 		</ShowElementTransition>
-		<div class="flex flex-row gap-5">
+		<div class="flex flex-row gap-1 sm:gap-5">
 			{#each ApScores as { label, score, maxScore }, i}
 				<div class="flex flex-col items-center gap-2">
 					<ShowElementTransition direction="up" speed="slow" delay={1100 + 200 * i}>

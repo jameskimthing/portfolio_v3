@@ -12,8 +12,8 @@
 	export let smallerLabel: boolean = false;
 	export let largerScore: boolean = false;
 
-	export let radius: number = 80;
-	export let strokeWidth: number = 5;
+	let radius: number = 80;
+	let strokeWidth: number = 5;
 
 	let labelElement: HTMLElement;
 	let scoreElement: HTMLElement;
@@ -51,15 +51,24 @@
 	let showTooltip: boolean = false;
 	let hoverTimeout: number;
 	function pointerEnter() {
-		hoverTimeout = setTimeout(() => (showTooltip = true), 500);
+		hoverTimeout = setTimeout(() => (showTooltip = true), 300);
 	}
 
 	function pointerLeave() {
 		clearTimeout(hoverTimeout);
 		showTooltip = false;
 	}
+
+	let width: number = 0;
+	$: radius = getRadius(width);
+	function getRadius(width: number): number {
+		if (width >= 1024) return 80;
+		if (width >= 640) return 60;
+		else return 50;
+	}
 </script>
 
+<svelte:window bind:innerWidth={width} />
 <!-- <div class="w-40 h-40 bg-white"> -->
 <div class="relative flex flex-row">
 	{#if showTooltip}
@@ -77,7 +86,10 @@
 		{#if label}
 			<div
 				bind:this={labelElement}
-				class="{smallerLabel ? 'text' : 'text-4xl text-amber-200'} transition-all duration-300"
+				style="width: {radius * 2 + strokeWidth}px"
+				class="{smallerLabel
+					? 'text'
+					: 'text-2xl lg:text-4xl text-amber-200'} transition-all duration-300 text-center truncate"
 			>
 				{label}
 			</div>
@@ -117,14 +129,22 @@
 				<div
 					bind:this={scoreElement}
 					class="flex flex-col items-center transition-all duration-1000"
-					style="max-width: {(radius * 2 + strokeWidth) * 0.9}px;"
+					style="width: {(radius * 2 + strokeWidth) * 0.9}px;"
 				>
 					{#if extraLabel}
-						<div class="mr-auto text-sm">{extraLabel}</div>
+						<div class="text-sm text-center">{extraLabel}</div>
 					{/if}
-					<div class="flex {scoreNextLine ? 'flex-col' : 'flex-row items-end'}">
-						<div class="{largerScore ? 'text-6xl' : 'text-5xl'} text-bright-yellow">{score}</div>
-						<div class="ml-auto {scoreNextLine ? '-mt-2' : 'mb-2'} text-sm">{'/' + maxScore}</div>
+					<div class="flex -mt-1 md:mt-0 {scoreNextLine ? 'flex-col' : 'flex-row items-end'}">
+						<div
+							class="{largerScore
+								? 'text-lg sm:text-2xl md:text-4xl lg:text-6xl'
+								: 'text-lg sm:text-2xl md:text-4xl lg:text-5xl'} text-bright-yellow"
+						>
+							{score}
+						</div>
+						<div class="ml-auto {scoreNextLine ? '-mt-2' : 'mb-1 md:mb-2'} text-sm">
+							{'/' + maxScore}
+						</div>
 					</div>
 				</div>
 			</div>

@@ -24,7 +24,7 @@
 		delay={basePageLoadingTime + 900}
 		extraClasses="flex flex-row"
 	>
-		<div class="flex flex-col items-center gap-2 ml-5 text-bright-yellow">
+		<div class="flex flex-col items-center gap-2 ml-2 sm:ml-5 text-bright-yellow">
 			<MenuItem
 				link="mailto:jameskimjaewon.abc@gmail.com?subject=Contact&body=Hello%20there!"
 				icon="/icons/email.svg"
@@ -37,13 +37,13 @@
 			<div class="w-0.5 h-80 mt-2 bg-amber-100" />
 		</div>
 
-		<div class="flex flex-col gap-2 mt-auto mb-5 ml-5">
+		<div class="flex flex-col gap-2 mt-auto mb-2 ml-2 sm:mb-5 sm:ml-5">
 			{#each sections as sec, i}
 				<ShowElementTransition direction="up" delay={basePageLoadingTime + 1500 + 150 * i}>
 					<!-- Use this over anchor tag, less hassle -->
 					<div
-						class="cursor-pointer text-lg hover:text-bright-yellow hover:text-xl whitespace-nowrap w-fit transition-all {$currentMenuSection ===
-							sec && 'text-bright-yellow font-bold text-xl'}"
+						class="cursor-pointer text-sm sm:text-lg hover:text-bright-yellow sm:hover:text-xl whitespace-nowrap w-fit transition-all {$currentMenuSection ===
+							sec && 'text-bright-yellow font-bold sm:text-xl'}"
 						on:pointerup={() =>
 							document.getElementById(sec)?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
 					>

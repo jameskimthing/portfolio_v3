@@ -41,9 +41,11 @@
 		These are my certifications after completing an official exam, namely from Google and Amazon Web
 		Services in the case here.
 	</CertificationHeading>
-	<div class="flex flex-wrap gap-5 py-2">
+	<div class="flex flex-wrap items-center justify-center gap-2 px-10 py-2 lg:px-0 lg:gap-5">
 		{#each professionalCertificates as { label, src }, i}
-			<Certificate {label} src={'certifications/professional/' + src} delay={350 + i * 100} />
+			<div class="w-[80px] h-[60px] md:w-[122px] md:h-[90px] xl:w-[162px] xl:h-[120px]">
+				<Certificate {label} src={'certifications/professional/' + src} delay={350 + i * 100} />
+			</div>
 		{/each}
 	</div>
 	<div class="h-14" />
@@ -52,10 +54,13 @@
 		the ones here, most of the courses I have taken did not offer any sort of free certificate,
 		therefore was not included in this list.
 	</CertificationHeading>
-	<div class="grid grid-cols-5 gap-5 py-2">
-		<!-- <Certificate label="Flutter Course" delay={600} src="certifications/courses/aws_flutter.jpg" /> -->
+	<div
+		class="flex flex-row flex-wrap items-center justify-center w-full gap-2 px-10 py-2 lg:gap-5 sm:px-20 xl:px-40 2xl:px-96"
+	>
 		{#each otherCertificates as { label, src }, i}
-			<Certificate {label} src={'certifications/courses/' + src} delay={500 + i * 100} />
+			<div class="w-[80px] h-[60px] md:w-[122px] md:h-[90px] xl:w-[162px] xl:h-[120px]">
+				<Certificate {label} src={'certifications/courses/' + src} delay={500 + i * 100} />
+			</div>
 		{/each}
 	</div>
 </section>

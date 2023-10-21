@@ -41,7 +41,7 @@
 	class="absolute flex flex-row items-center gap-1 transition-all duration-500 cursor-pointer group hover:-translate-y-1"
 	style="bottom: {project.complexity}%; left: {ratioToNow}%;"
 	bind:this={projectElement}
-	on:pointerenter={() => (hoverTimeout = setTimeout(() => (showTooltip = true), 500))}
+	on:pointerenter={() => (hoverTimeout = setTimeout(() => (showTooltip = true), 300))}
 	on:pointerleave={() => {
 		clearTimeout(hoverTimeout);
 		showTooltip = false;

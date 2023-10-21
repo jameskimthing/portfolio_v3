@@ -65,7 +65,7 @@
 	let showTooltip: boolean = false;
 	let hoverTimeout: number;
 	function pointerEnter() {
-		hoverTimeout = setTimeout(() => (showTooltip = true), 500);
+		hoverTimeout = setTimeout(() => (showTooltip = true), 300);
 	}
 
 	function pointerLeave() {
