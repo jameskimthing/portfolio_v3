@@ -36,21 +36,22 @@
 			/>
 			<div class="w-0.5 h-80 mt-2 bg-amber-100" />
 		</div>
+	</ShowElementTransition>
+</section>
 
-		<div class="flex flex-col gap-2 mt-auto mb-2 ml-2 sm:mb-5 sm:ml-5">
-			{#each sections as sec, i}
-				<ShowElementTransition direction="up" delay={basePageLoadingTime + 1500 + 150 * i}>
-					<!-- Use this over anchor tag, less hassle -->
-					<div
-						class="cursor-pointer text-sm sm:text-lg hover:text-bright-yellow sm:hover:text-xl whitespace-nowrap w-fit transition-all {$currentMenuSection ===
-							sec && 'text-bright-yellow font-bold sm:text-xl'}"
-						on:pointerup={() =>
-							document.getElementById(sec)?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-					>
-						{i}. {capitalize(sec)}
-					</div>
-				</ShowElementTransition>
-			{/each}
-		</div>
+<section class="fixed z-40 flex flex-col bottom-2 left-12 sm:left-14 text-amber-100">
+	<ShowElementTransition direction="right" delay={0} extraClasses="flex flex-col">
+		{#each sections as sec, i}
+			<ShowElementTransition direction="up" delay={basePageLoadingTime + 1500 + 150 * i}>
+				<div
+					class="cursor-pointer text-sm sm:text-lg hover:text-bright-yellow sm:hover:text-xl whitespace-nowrap w-fit transition-all {$currentMenuSection ===
+						sec && 'text-bright-yellow font-bold sm:text-xl'}"
+					on:pointerup={() =>
+						document.getElementById(sec)?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+				>
+					{i}. {capitalize(sec)}
+				</div>
+			</ShowElementTransition>
+		{/each}
 	</ShowElementTransition>
 </section>

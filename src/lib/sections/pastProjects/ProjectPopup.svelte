@@ -14,12 +14,12 @@
 		on:pointerup={() => ($projectPopupIndex = -1)}
 		transition:fade={{ duration: 250 }}
 	>
-		<h3 class="text-2xl font-bold text-amber-100">{project.title}</h3>
-		<p>{project.description}</p>
-		<div class="relative max-w-[1000px]">
+		<h3 class="text-base font-bold text-center xs:text-2xl text-amber-100">{project.title}</h3>
+		<p class="text-center">{project.description}</p>
+		<div class="relative">
 			<img
 				alt={project.title}
-				class="max-w-[1000px] rounded-xl"
+				class="rounded-xl w-[800px] lg:w-[800px]"
 				src="pastProjects/{project.image}"
 			/>
 			<div class="absolute flex flex-row gap-2 bottom-2 w-min h-min right-2">

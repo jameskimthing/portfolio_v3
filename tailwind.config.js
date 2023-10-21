@@ -8,6 +8,9 @@ export default {
 				'dark-blue': '#001d3d',
 				blue: '#003566',
 				'bright-yellow': '#ffd60a'
+			},
+			screens: {
+				xs: '450px'
 			}
 		}
 	},

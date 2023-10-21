@@ -10,4 +10,21 @@ function generateRandomString(length: number): String {
 	return result;
 }
 
-export { generateRandomString };
+function clickOutside(node: any, func: Function) {
+	const handleClick = (event: any) => {
+		if (node && !node.contains(event.target) && !event.defaultPrevented) {
+			func();
+			node.dispatchEvent(new CustomEvent('click_outside', node));
+		}
+	};
+
+	document.addEventListener('pointerup', handleClick, true);
+
+	return {
+		destroy() {
+			document.removeEventListener('pointerup', handleClick, true);
+		}
+	};
+}
+
+export { generateRandomString, clickOutside };

@@ -8,7 +8,6 @@
 	export let ratioToNow: number;
 	export let delay: number;
 
-	let showTooltip: boolean = false;
 	let tooltipStyles: string = '';
 	let projectElement: HTMLDivElement;
 	onMount(() => {
@@ -38,17 +37,16 @@
 </script>
 
 <div
-	class="absolute flex flex-row items-center gap-1 transition-all duration-500 cursor-pointer group hover:-translate-y-1"
+	class="absolute transition-all duration-500 cursor-pointer w-fit group hover:-translate-y-1"
 	style="bottom: {project.complexity}%; left: {ratioToNow}%;"
 	bind:this={projectElement}
-	on:pointerenter={() => (hoverTimeout = setTimeout(() => (showTooltip = true), 300))}
-	on:pointerleave={() => {
-		clearTimeout(hoverTimeout);
-		showTooltip = false;
-	}}
 >
 	<div class="w-4 h-4 transition-colors duration-300 rounded-full bg-amber-100" />
-	<div class="text-sm whitespace-nowrap group-hover:text-amber-100">{project.title}</div>
+	<div
+		class="absolute text-xs text-center -translate-x-1 -translate-y-1/2 lg:translate-x-1 top-1/2 right-full lg:left-full lg:w-fit w-min lg:whitespace-nowrap lg:text-sm group-hover:text-amber-100"
+	>
+		{project.title}
+	</div>
 </div>
 
 <!-- {#if showTooltip}

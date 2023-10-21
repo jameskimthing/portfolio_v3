@@ -24,13 +24,15 @@
 </script>
 
 <section id="past_projects" class="w-full h-screen" style="background-color: #203a5a;">
-	<div class="flex flex-col items-center justify-center w-full h-full gap-5">
+	<div class="flex flex-col items-center justify-center w-full h-full gap-5 px-5">
 		<div class="flex flex-col gap-2 text-center">
-			<h2 class="text-4xl text-amber-100">Most of what I Developed Until Now</h2>
-			<div class="text-xl text-grau-500">Hover over item to for more information</div>
+			<h2 class="text-xl md:text-4xl text-amber-100">Most of what I Developed Until Now</h2>
+			<div class="md:text-xl text-grau-500">Click item to for more information</div>
 		</div>
 		<div class="p-10 bg-black rounded-3xl bg-opacity-20">
-			<div class="w-[600px] h-[600px] relative">
+			<div
+				class="w-[200px] h-[200px] xs:w-[300px] xs:h-[300px] sm:w-[500px] sm:h-[500px] md:w-[600px] md:h-[600px] relative"
+			>
 				<div class="text-white text-opacity-80">
 					<div class="absolute bg-white left-0 top-0 bottom-0 w-[2px] bg-opacity-50" />
 					<div class="absolute h-[2px] bg-white bottom-0 left-0 right-0 bg-opacity-50" />
