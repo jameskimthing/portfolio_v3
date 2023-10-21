@@ -6,7 +6,10 @@
 <section id="professional_experience" style="background-color: #102a4a;">
 	<div class="flex flex-col items-center justify-center w-full min-h-screen">
 		<ShowElementTransition direction="up" delay={300}>
-			<div class="text-4xl text-amber-100">Professional Experience</div>
+			<div class="flex flex-col gap-2 text-center">
+				<div class="text-4xl text-amber-100">Professional Experience</div>
+				<div class="text-xl text-grau-500">Hover over bar to for more information</div>
+			</div>
 		</ShowElementTransition>
 		<div class="py-5">
 			<Timeline />

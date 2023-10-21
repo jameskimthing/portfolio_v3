@@ -26,6 +26,6 @@
 </svelte:head>
 
 <PageLoading {showLoading} />
-<div class="w-full h-full bg-red-800 text-white font-mono">
+<div class="w-full h-full font-mono text-white bg-red-800">
 	<slot />
 </div>

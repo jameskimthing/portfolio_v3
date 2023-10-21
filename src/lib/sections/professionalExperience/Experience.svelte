@@ -40,11 +40,11 @@
 		if (`${endMonth}/${endYear}` === untilCurrent) dateTo = 'to today (ongoing)';
 		else dateTo = `to ${months[endMonth]} ${endYear}`;
 
+		if (experienceElement.getBoundingClientRect().width < 10) {
+			experienceElement.classList.add('w-[10px]');
+		}
 		async function prepareElementTransition() {
 			experienceElement.classList.add('scale-x-0');
-
-			// titleElement.classList.remove('duration-300');
-			// await new Promise((r) => setTimeout(r, 0));
 			titleElement.classList.add('opacity-0');
 			titleElement.classList.add('-translate-y-1/2');
 		}
@@ -55,8 +55,6 @@
 			repeat: true,
 			onIntersecting: async () => {
 				experienceElement.classList.remove('scale-x-0');
-				// await new Promise((r) => setTimeout(r, 0));
-				// titleElement.classList.add('duration-300');
 				titleElement.classList.remove('opacity-0');
 				titleElement.classList.remove('-translate-y-1/2');
 			},
@@ -79,7 +77,7 @@
 <div class="relative w-full h-7">
 	<div class="absolute h-7" style="left: {start}px; right: {end}px">
 		<section
-			class="relative w-full h-full transition-all duration-500 origin-right rounded shadow cursor-pointer shadow-black bg-amber-100 group hover:bg-amber-200 hover:-translate-y-1"
+			class="relative w-full h-full transition-all duration-500 origin-right rounded shadow shadow-black bg-amber-100 group hover:bg-amber-200 hover:-translate-y-1"
 			bind:this={experienceElement}
 			on:pointerenter={pointerEnter}
 			on:pointerleave={pointerLeave}

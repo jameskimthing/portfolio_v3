@@ -59,10 +59,10 @@ const experiences: Experience[] = [
 		title: 'Church Broadcast Team',
 		description:
 			'Supervised the sound/recording system & maintained weekly live streaming of sermons; Managed technical aspects (transitions, visuals, etc)',
-		duration: '04/2017-01/2023'
+		duration: '04/2017-12/2022'
 	},
+	// project given site
 	{
-		// project given site
 		title: 'Project GIVEN Website',
 		description:
 			'Developed and designed the homepage of the Project GIVEN organization, complete with the main homepage, alongside multiple sections for different topics, and a separate admin page for Project GIVEN insiders to update, or edit existing information',

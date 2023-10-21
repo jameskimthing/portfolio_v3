@@ -10,12 +10,14 @@
 	const professionalCertificates: Certification[] = [
 		{ label: 'AWS Foundations', src: 'aws.png' },
 		{ label: 'Google for Education Level 1', src: 'google_for_education.png' },
+		{ label: 'Google for Education Level 2', src: 'google_for_education2.png' },
 		{ label: 'Tensorflow Developer Certificate', src: 'tensorflow.png' }
 	];
 
 	const otherCertificates: Certification[] = [
 		{ label: 'Flutter Course', src: 'aws_flutter.jpg' },
 		{ label: 'AWS Course', src: 'aws_udemy.jpg' },
+		{ label: 'Introduction to Calculus', src: 'intro_to_calculus.png' },
 		{ label: 'Calculus BC', src: 'calculus_bc.png' },
 		{ label: 'CS50 AI', src: 'cs50ai.png' },
 		{ label: 'CS50 Game Development', src: 'cs50g.png' },
@@ -50,7 +52,7 @@
 		the ones here, most of the courses I have taken did not offer any sort of free certificate,
 		therefore was not included in this list.
 	</CertificationHeading>
-	<div class="grid grid-cols-4 gap-5 py-2">
+	<div class="grid grid-cols-5 gap-5 py-2">
 		<!-- <Certificate label="Flutter Course" delay={600} src="certifications/courses/aws_flutter.jpg" /> -->
 		{#each otherCertificates as { label, src }, i}
 			<Certificate {label} src={'certifications/courses/' + src} delay={500 + i * 100} />

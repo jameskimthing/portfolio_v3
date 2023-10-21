@@ -83,7 +83,7 @@
 			</div>
 		{/if}
 		<div
-			class="relative transition-transform duration-300 cursor-pointer group hover:-translate-y-2"
+			class="relative transition-transform duration-300 group hover:-translate-y-2"
 			style="height: {radius * 2 + strokeWidth}px; width: {radius * 2 + strokeWidth}px"
 			on:pointerenter={pointerEnter}
 			on:pointerleave={pointerLeave}
