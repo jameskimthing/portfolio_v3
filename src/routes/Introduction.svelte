@@ -18,7 +18,7 @@
 
 <section
 	id="introduction"
-	class="flex flex-col justify-center w-full min-h-screen px-8 pl-16 bg-black sm:pl-20 lg:pl-32"
+	class="flex flex-col justify-center w-full min-h-screen px-8 py-5 pl-16 bg-black sm:pl-20 lg:pl-32"
 >
 	<ShowElementTransition direction="down" delay={basePageLoadingTime + 150}>
 		<div class="text-base text-white sm:pb-3 sm:text-xl lg:text-2xl">Hello! I am</div>

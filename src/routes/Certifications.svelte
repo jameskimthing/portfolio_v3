@@ -33,7 +33,7 @@
 
 <section
 	id="certifications"
-	class="flex flex-col items-center justify-center w-full min-h-screen"
+	class="flex flex-col items-center justify-center w-full min-h-screen py-5"
 	style="background-color: #001a3a;"
 >
 	<!-- style="background-color: #000d2d;" -->

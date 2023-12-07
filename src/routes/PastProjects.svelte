@@ -23,8 +23,8 @@
 	}
 </script>
 
-<section id="past_projects" class="w-full h-screen" style="background-color: #203a5a;">
-	<div class="flex flex-col items-center justify-center w-full h-full gap-5 px-5">
+<section id="past_projects" class="w-full min-h-screen py-5" style="background-color: #203a5a;">
+	<div class="flex flex-col items-center justify-center w-full min-h-screen gap-5 px-5 py-5">
 		<div class="flex flex-col gap-2 text-center">
 			<h2 class="text-xl md:text-4xl text-amber-100">Most of what I Developed Until Now</h2>
 			<div class="md:text-xl text-grau-500">Click item to for more information</div>

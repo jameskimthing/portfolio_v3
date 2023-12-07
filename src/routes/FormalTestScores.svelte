@@ -25,7 +25,7 @@
 
 <section
 	id="formal_test_scores"
-	class="flex flex-col items-center justify-center w-full min-h-screen gap-5 xl:flex-row xl:gap-10"
+	class="flex flex-col items-center justify-center w-full min-h-screen gap-5 py-5 xl:flex-row xl:gap-10"
 	style="background-color: #000b2b;"
 >
 	<div class="px-5 md:px-0 md:w-[550px] 2xl:w-[600px] flex flex-col items-center xl:items-start">

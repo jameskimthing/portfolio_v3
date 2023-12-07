@@ -25,7 +25,7 @@
 -->
 <section
 	id="programming"
-	class="flex flex-col items-center justify-center w-full min-h-screen bg-blue"
+	class="flex flex-col items-center justify-center w-full min-h-screen py-5 bg-blue"
 >
 	<div class="max-w-[1000px] flex flex-col gap-2">
 		<ShowElementTransition direction="up" delay={300}>

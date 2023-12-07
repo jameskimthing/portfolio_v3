@@ -4,7 +4,7 @@
 </script>
 
 <section id="professional_experience" style="background-color: #102a4a;">
-	<div class="flex flex-col items-center justify-center w-full min-h-screen">
+	<div class="flex flex-col items-center justify-center w-full min-h-screen py-5">
 		<ShowElementTransition direction="up" delay={300}>
 			<div class="flex flex-col gap-2 text-center">
 				<div class="text-xl sm:text-4xl text-amber-100">Professional Experience</div>
