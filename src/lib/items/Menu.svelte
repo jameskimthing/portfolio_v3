@@ -34,6 +34,10 @@
 				link="https://www.linkedin.com/in/james-kim-282750252/"
 				icon="/icons/linkedin.svg"
 			/>
+			<MenuItem
+				link="https://drive.google.com/file/d/1LABCF5OwbZ4QhoK2-7t_5ikFO6EwXpFG/view?usp=sharing"
+				icon="/icons/resume.svg"
+			/>
 			<div class="w-0.5 h-80 mt-2 bg-amber-100" />
 		</div>
 	</ShowElementTransition>

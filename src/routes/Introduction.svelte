@@ -37,6 +37,12 @@
 		</div>
 	</ShowElementTransition>
 
+	<ShowElementTransition direction="down" delay={basePageLoadingTime + 525}>
+		<div class="text-base sm:text-lg text-amber-100 sm:whitespace-nowrap">
+			UIUC - Information Science and Data Science
+		</div>
+	</ShowElementTransition>
+
 	<ShowElementTransition direction="down" delay={basePageLoadingTime + 600}>
 		<div class=" sm:text-xl text-slate-400 md:mt-5 max-w-[800px]">
 			I specialize in building web and mobile applications with Svelte and Flutter, alongside

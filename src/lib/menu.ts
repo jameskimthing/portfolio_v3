@@ -1,7 +1,7 @@
 import { writable, type Writable } from 'svelte/store';
 import { observeElement } from './observer';
 
-const basePageLoadingTime: number = 1000;
+const basePageLoadingTime = 1000;
 const currentMenuSection: Writable<string> = writable('introduction');
 
 function initializeMenu(sections: string[]) {

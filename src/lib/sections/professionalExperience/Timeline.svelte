@@ -22,6 +22,11 @@
 	}
 
 	function leftMove(startMonth: number, startYear: number) {
+		if (startYear < 2021) {
+			startYear = 2021;
+			startMonth = 7;
+		}
+
 		const leftYear: number = (startYear - firstYear) * individualWidth + individualWidth / 2;
 		const left = leftYear + individualWidth * (startMonth / 11);
 		return left;
@@ -116,7 +121,7 @@
 			{/each}
 		</div>
 
-		<div
+		<!-- <div
 			class="absolute w-1 transition-all duration-1000 rounded bg-bright-yellow top-11"
 			style="left: {leftOfToday}px; height: {height + 70}px"
 			bind:this={todayElement}
@@ -127,6 +132,6 @@
 				{months[parseInt(untilCurrent.split('/')[0])]}
 				{untilCurrent.split('/')[1]}
 			</div>
-		</div>
+		</div> -->
 	</div>
 </section>

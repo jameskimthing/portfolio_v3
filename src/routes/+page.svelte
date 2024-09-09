@@ -4,8 +4,6 @@
 	import Menu from '$lib/items/Menu.svelte';
 	import Certifications from './Certifications.svelte';
 	import Introduction from './Introduction.svelte';
-	import FormalTestScores from './FormalTestScores.svelte';
-	import Development from './Development.svelte';
 	import ProfessionalExperience from './ProfessionalExperience.svelte';
 	import PastProjects from './PastProjects.svelte';
 
@@ -13,7 +11,6 @@
 
 	const sections: string[] = [
 		'introduction',
-		'formal_test_scores',
 		'certifications',
 		'professional_experience',
 		'past_projects'
@@ -29,7 +26,7 @@
 <Menu {sections} />
 
 <Introduction />
-<FormalTestScores />
+<!-- <FormalTestScores /> -->
 <Certifications />
 <ProfessionalExperience />
 <PastProjects />
