@@ -30,10 +30,7 @@
 				icon="/icons/email.svg"
 			/>
 			<MenuItem link="https://github.com/jameskimthing" icon="/icons/github.svg" />
-			<MenuItem
-				link="https://www.linkedin.com/in/james-kim-282750252/"
-				icon="/icons/linkedin.svg"
-			/>
+			<MenuItem link="https://www.linkedin.com/in/jameskimthing/" icon="/icons/linkedin.svg" />
 			<MenuItem
 				link="https://drive.google.com/file/d/1LABCF5OwbZ4QhoK2-7t_5ikFO6EwXpFG/view?usp=sharing"
 				icon="/icons/resume.svg"
