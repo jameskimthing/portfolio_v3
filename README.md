@@ -1,9 +1,7 @@
-# This is my Portfolio!
+# James Kim — Portfolio
 
-Mainly for university admission.
+Static, prerendered SvelteKit portfolio featuring experience, selected engineering projects,
+education, skills, and public contact links.
 
-Includes:
-
-- My SAT, TOEFL, GED, and AP scores at 2023
-- All my certificates (does NOT include any course I took that don't have certificates)
-- Extracurricular activities
+Run `pnpm install`, then `pnpm dev` for local development. Before deployment, run `pnpm check`,
+`pnpm lint`, and `pnpm build`; the static output is written to `build/`.
