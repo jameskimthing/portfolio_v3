@@ -1,133 +1,156 @@
-interface Project {
+export type ProjectLink = { label: string; href: string };
+export type ProjectBase = {
+	slug: string;
 	title: string;
-	description: string;
-	complexity: number;
-	initialCommit: string; // '07/09/2023'
-	madeWith: string[];
-	demo: string;
-	code?: string;
-	features: string[];
-	image: string; // under /static/pastProjects/[image]
-}
+	period: string;
+	summary: string;
+	technologies: readonly string[];
+	links: readonly ProjectLink[];
+};
+export type FeaturedProject = ProjectBase & {
+	highlights: readonly string[];
+	image?: string;
+	imageAlt?: string;
+	visual?: 'infrastructure' | 'reporting';
+};
+export type ArchiveProject = ProjectBase & { image: string; imageAlt: string };
 
-// update Project.svelte when adding, cause I hardcoded some stuff out of lazines :)
-const projects: Project[] = [
+export const featuredProjects = [
 	{
-		title: 'Project GIVEN Site',
-		description: 'A homepage with menus, with past achievements.',
-		complexity: 90,
-		initialCommit: '07/09/2023',
-		madeWith: ['SvelteKit', 'Firebase', 'Tailwind', 'Vercel'],
-		demo: 'https://projectgiven.org/',
-		features: ['main page', 'admin page', 'responsive design'],
-		image: 'projectgiven.png'
-	},
-	{
-		title: 'Open Shelter',
-		description: 'App for diaster victims providing shelter.',
-		complexity: 60,
-		initialCommit: '09/09/2023',
-		madeWith: ['Flutter', 'Firebase'],
-		demo: 'https://shelter.projectgiven.org/',
-		features: ['user authentication', 'form registration for location'],
-		image: 'openshelter.png'
-	},
-	{
-		title: 'My Utilities',
-		description: 'A set of tools, each of them with their own uses.',
-		complexity: 60,
-		initialCommit: '11/12/2022',
-		madeWith: ['SvelteKit', 'Tailwind', 'Supabase'],
-		demo: 'https://jameskimthing.github.io/my-utilities',
-		code: 'https://github.com/jameskimthing/my-utilities',
-		features: [
-			'password manager (with encryption)',
-			'user authentication',
-			'l-systems',
-			'page transition animation'
+		slug: 'dlab-weekly-reports',
+		title: 'D.LAB Weekly Reports',
+		period: 'Jul. – Sep. 2026',
+		summary:
+			'Independently built and deployed a weekly reporting platform for planned rollout to 6–10 teachers and approximately 40 students, replacing individual Google Docs with centralized report histories and mobile-friendly viewing.',
+		technologies: [
+			'Next.js',
+			'TypeScript',
+			'Firebase',
+			'Google Drive',
+			'OAuth',
+			'Puppeteer',
+			'Vercel'
 		],
-		image: 'myutilities.png'
+		highlights: [
+			'Integrated Google Drive for report PDFs/media through teacher-authorized OAuth uploads and service-account reads; scoped editing and dashboards by role and student relationships.',
+			'Implemented optimistic concurrency control, immutable report revisions, and compensating cleanup for conflicting edits and partial Firestore/Google Drive failures.',
+			'Built protected PDF generation with Puppeteer/Chromium and short-lived render tokens, staged media uploads, byte-range video streaming, integration tests, and smoke tests.'
+		],
+		links: [],
+		visual: 'reporting'
 	},
 	{
-		title: 'AWS Icons',
-		description: 'A user-friendly click-and-copy site for the various aws icons',
-		complexity: 40,
-		initialCommit: '01/09/2023',
-		madeWith: ['SvelteKit', 'Tailwind'],
-		demo: 'https://jameskimthing.github.io/aws-icons/',
-		code: 'https://github.com/jameskimthing/aws-icons',
-		features: ['copy-and-paste'],
-		image: 'awsicons.png'
+		slug: 'minimalist-focus-timer',
+		title: 'Minimalist Focus Timer',
+		period: 'Feb. 2024',
+		summary: 'Zero-dependency Pomodoro extension published for Chrome and Firefox.',
+		technologies: ['JavaScript', 'Chrome MV3', 'Firefox MV2', 'WebExtensions'],
+		highlights: [
+			'1,000+ Chrome users (4.8/5), approximately 800 Firefox users (5/5), and 50+ GitHub stars.',
+			'Timestamp-based timing avoids accumulated interval drift; Chrome uses MV3 service-worker/offscreen support, Firefox uses an MV2 background page, with extension messaging and a live progress icon.'
+		],
+		links: [
+			{ label: 'GitHub', href: 'https://github.com/jameskimthing/minimalist-focus-timer' },
+			{
+				label: 'Chrome Store',
+				href: 'https://chromewebstore.google.com/detail/pomodoro-focus-timer/eglbnllngiannimbjimkpjklnjgelnoi'
+			},
+			{
+				label: 'Firefox Add-ons',
+				href: 'https://addons.mozilla.org/en-US/firefox/addon/minimalist-focus-timer/'
+			}
+		],
+		image: '/pastProjects/minimalist-focus-timer.png',
+		imageAlt: 'Minimalist Focus Timer extension showing focus-session controls'
 	},
 	{
-		title: 'Discord Clone',
-		description: 'A clone of discord, all with message, and real-time communication',
-		complexity: 80,
-		initialCommit: '04/17/2023',
-		madeWith: ['Supabase', 'SvelteKit', 'Tailwind', 'WebRTC'],
-		demo: 'https://discord-clone-thing.vercel.app/',
-		code: 'https://github.com/jameskimthing/discord-clone-web',
-		features: ['real time voice calling', 'message', 'servers, chat rooms'],
-		image: 'discordclone.png'
+		slug: 'remote-development-infrastructure',
+		title: 'Remote Development Infrastructure',
+		period: 'Sep. 2026',
+		summary:
+			'Security-conscious remote development host with reproducible, public-safe configuration.',
+		technologies: ['Linux', 'Hetzner', 'Tailscale', 'Cloudflare', 'Caddy', 'systemd'],
+		highlights: [
+			'Operates code-server, Jupyter, and development services on Hetzner Ubuntu behind a Hetzner Cloud Firewall, Tailscale private administration, Cloudflare DNS, and Caddy reverse proxying.',
+			'Maintains Git-tracked host configuration with environment-specific templates plus setup and drift-detection scripts, excluding secrets and runtime state.'
+		],
+		links: [{ label: 'GitHub', href: 'https://github.com/jameskimthing/vps-config' }],
+		visual: 'infrastructure'
 	},
 	{
-		title: 'Tab Container',
-		description: 'A simple container allowing me to change tabs name and the icon',
-		complexity: 20,
-		initialCommit: '01/17/2023',
-		madeWith: ['JavaScript', 'HTML5', 'CSS3'],
-		demo: 'https://container.jkim.app',
-		code: 'https://github.com/jameskimthing/tab-container',
-		features: ['site title modification', 'site icon modification'],
-		image: 'tabcontainer.png'
-	},
-	{
-		title: 'Portfolio v1',
-		description: 'The first iteration of my portfolio website',
-		complexity: 70,
-		initialCommit: '04/10/2023',
-		madeWith: ['SvelteKit', 'Intersection Observers', 'Tailwind', 'Three js'],
-		demo: 'https://james-portfolio-v1.vercel.app/',
-		code: 'https://github.com/jameskimthing/portfolio_v1',
-		features: ['3d skills cloud', '3d gallery of past projects'],
-		image: 'portfolio1.png'
-	},
-	{
-		title: 'Tables',
-		description:
-			'A way to organize folders under accounts, each under a group, where I can add individual items',
-		complexity: 75,
-		initialCommit: '03/18/2023',
-		madeWith: ['Supabase', 'SvelteKit', 'Tailwind'],
-		demo: 'https://james-tables.vercel.app/',
-		code: 'https://github.com/jameskimthing/tables',
-		features: ['folders', 'public / private folders'],
-		image: 'tables.png'
-	},
-	{
-		title: 'L System Playground',
-		description: 'A playground to make your own l-system',
-		complexity: 55,
-		initialCommit: '10/16/2023',
-		madeWith: ['SvelteKit', 'Tailwind'],
-		demo: 'https://jameskimthing.github.io/l-system-playground',
-		code: 'https://github.com/jameskimthing/l-system-playground',
-		features: ['l-system presets', 'custom l-systems'],
-		image: 'lsystemplayground.png'
-	},
-	{
+		slug: 'doczilla',
 		title: 'Doczilla',
-		description:
-			'A mobile telemedicine app, to connect underprivileged communities with distant doctors',
-		complexity: 95,
-		initialCommit: '10/14/2022',
-		madeWith: ['Flutter', 'Firebase', 'WebRTC'],
-		demo: 'https://doczilla.projectgiven.org/',
-		code: 'https://github.com/project-given/doczilla',
-		features: ['prescriptions', 'real time video calling'],
-		image: 'doczilla.png'
+		period: 'Oct. 2022',
+		summary: 'Solo-built telemedicine app with doctor and patient workflows.',
+		technologies: ['Flutter', 'Firebase', 'Firestore', 'WebRTC'],
+		highlights: [
+			'Doctor/patient roles, intake, prescriptions, and WebRTC video calls using Firestore signaling.',
+			'2nd Place, 2022 Congressional App Challenge, Washington’s 9th District (WA-09).'
+		],
+		links: [
+			{ label: 'Demo', href: 'https://doczilla.projectgiven.org/' },
+			{ label: 'GitHub', href: 'https://github.com/project-given/doczilla' }
+		],
+		image: '/pastProjects/doczilla.png',
+		imageAlt: 'Doczilla telemedicine app screens'
 	}
-];
+] satisfies readonly FeaturedProject[];
 
-export { projects };
-export type { Project };
+export const archiveProjects = [
+	{
+		slug: 'project-given-site',
+		title: 'Project GIVEN Site',
+		period: '2023',
+		summary: 'Organization homepage/admin experience with responsive content management.',
+		technologies: ['SvelteKit', 'Firebase', 'Tailwind', 'Vercel'],
+		image: '/pastProjects/projectgiven.png',
+		imageAlt: 'Project GIVEN website homepage',
+		links: [{ label: 'Live', href: 'https://projectgiven.org/' }]
+	},
+	{
+		slug: 'open-shelter',
+		title: 'Open Shelter',
+		period: '2023',
+		summary: 'Disaster-shelter location and registration app.',
+		technologies: ['Flutter', 'Firebase'],
+		image: '/pastProjects/openshelter.png',
+		imageAlt: 'Open Shelter application screen',
+		links: [{ label: 'Live', href: 'https://shelter.projectgiven.org/' }]
+	},
+	{
+		slug: 'aws-icons',
+		title: 'AWS Icons',
+		period: '2023',
+		summary: 'Searchable copy/download utility for AWS assets.',
+		technologies: ['SvelteKit', 'Tailwind'],
+		image: '/pastProjects/awsicons.png',
+		imageAlt: 'AWS Icons search interface',
+		links: [
+			{ label: 'Live', href: 'https://jameskimthing.github.io/aws-icons/' },
+			{ label: 'GitHub', href: 'https://github.com/jameskimthing/aws-icons' }
+		]
+	},
+	{
+		slug: 'discord-clone',
+		title: 'Discord Clone',
+		period: '2023',
+		summary: 'Real-time messages, rooms, and voice calling.',
+		technologies: ['SvelteKit', 'Supabase', 'WebRTC'],
+		image: '/pastProjects/discordclone.png',
+		imageAlt: 'Discord Clone messaging interface',
+		links: [{ label: 'GitHub', href: 'https://github.com/jameskimthing/discord-clone-web' }]
+	},
+	{
+		slug: 'l-system-playground',
+		title: 'L-System Playground',
+		period: '2023',
+		summary: 'Preset and custom L-system renderer.',
+		technologies: ['SvelteKit', 'Tailwind'],
+		image: '/pastProjects/lsystemplayground.png',
+		imageAlt: 'L-System Playground renderer',
+		links: [
+			{ label: 'Live', href: 'https://jameskimthing.github.io/l-system-playground/' },
+			{ label: 'GitHub', href: 'https://github.com/jameskimthing/l-system-playground' }
+		]
+	}
+] satisfies readonly ArchiveProject[];

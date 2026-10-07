@@ -1,91 +1,44 @@
-interface Experience {
-	title: string;
-	description: string;
-	duration: string;
-}
+export type Experience = {
+	company: string;
+	role: string;
+	location: string;
+	period: string;
+	summary: string;
+	highlights: readonly string[];
+	technologies: readonly string[];
+};
 
-// const years: number[] = [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023];
-const today = new Date();
-const mm = String(today.getMonth()).padStart(2, '0'); //January is 0!
-const yyyy = today.getFullYear();
-
-const untilCurrent = `${mm}/${yyyy}`;
-
-const months: string[] = [
-	'January', // 00
-	'February', // 01
-	'March', // 02
-	'April', // 03
-	'May', // 04
-	'June', // 05
-	'July', // 06
-	'August', // 07
-	'September', // 08
-	'October', // 09
-	'November', // 10
-	'December' // 11
-];
-
-const years = ['2022', '2023', '2024'];
-const firstYear = parseInt(years[0]);
-const lastYear = parseInt(years[years.length - 1]);
-
-const experiences: Experience[] = [
+export const experiences = [
 	{
-		title: 'Nodus Labs (InfraNodus)',
-		description:
-			'Freelance contract developer remotely with a company based on the United Kingdom. Focused on implementing advanced AI features for a browser extension (1000+ users, paid) on text network analysis, established a robust backend with Express, Node, Docker, developed experimental AI-powered chat interfaces for Telegram & WhatsApp, and launched an obsidian plugin from scratch incorporating AI-driven topic summarization & question generation.',
-		duration: '02/2024-06/2024'
+		company: 'University of Illinois Urbana-Champaign',
+		role: 'CS 128 Course Assistant',
+		location: 'Urbana, IL',
+		period: 'Jan. 2025 – May 2025',
+		summary:
+			'Led office hours and supported labs/course forums for Intro to CS II, helping students debug C++ and reason through program design.',
+		highlights: [],
+		technologies: ['C++', 'Teaching', 'Program Design']
 	},
 	{
-		title: 'G-Telp Website',
-		description:
-			'Developed the new Official Education Service Homepage (Frontend, backend, UIUX); Brainstormed with teammates to create new features',
-		duration: '09/2023-00/2024'
-	},
-	{
-		title: 'Project GIVEN',
-		description:
-			'Arranged 20+ local healthcare events and cured 200+ patients; Established a local library from 500+ donated books for 50+ unprivileged students',
-		duration: '00/2018-06/2023'
-	},
-	{
-		title: 'Haemill School',
-		description:
-			'Upgraded the online database to a Google Workspace based platform (30+TB); Instructed 15+ school faculty and 60+ students with Google for Education',
-		duration: '00/2022-07/2022'
-	},
-	{
-		title: 'Together Village',
-		description:
-			'Organized boot camp for grades 5-10; Taught 20+ students in-person & online sessions; Concluded with each holding a 5 minute English presentation',
-		duration: '00/2022-07/2022'
-	},
-	{
-		title: 'Church Broadcast Team',
-		description:
-			'Supervised the sound/recording system & maintained weekly live streaming of sermons; Managed technical aspects (transitions, visuals, etc)',
-		duration: '04/2017-11/2022'
-	},
-	{
-		title: 'Doczilla',
-		description:
-			'Developed telemedicine app connecting distant doctors with unprivileged communities; Treated 50+ patients with medical events held in the Philippines',
-		duration: '06/2022-10/2022'
-	},
-	{
-		title: 'Project GIVEN Website',
-		description:
-			'Developed and designed the homepage of the Project GIVEN organization, complete with the main homepage, alongside multiple sections for different topics, and a separate admin page for Project GIVEN insiders to update, or edit existing information',
-		duration: '05/2023-06/2023'
-	},
-	{
-		title: 'Open Shelter',
-		description:
-			'Developed app providing free shelter & electricity for disaster victims reliant on electric equipment; 10+ locations over 4 countries',
-		duration: '08/2023-09/2023'
+		company: 'Nodus Labs · InfraNodus',
+		role: 'Contract Software Engineer',
+		location: 'Remote · U.K. client',
+		period: 'Mar. 2024 – Jul. 2024',
+		summary:
+			'Developed Chrome extension features for the paid InfraNodus text-analysis product with 1,000+ users.',
+		highlights: [
+			'Built scraping/content-ingestion APIs for webpages, PDFs, and YouTube plus embeddings, caching, vector search, request queuing, and Swagger documentation.',
+			'Reduced benchmark processing-stage time 73% (6.2 s to 1.65 s) by replacing jsdom with Cheerio; reduced mean YouTube caption retrieval time 58% (7.71 s to 3.21 s) in a five-run, single-video benchmark by changing retrieval method and proxy configuration.',
+			'Started an Obsidian plugin prototype and explored experimental Telegram integration and AI chat features.'
+		],
+		technologies: [
+			'JavaScript',
+			'Node.js',
+			'Express',
+			'Cheerio',
+			'REST APIs',
+			'Vector Search',
+			'Swagger'
+		]
 	}
-];
-
-export { experiences, months, years, firstYear, lastYear, untilCurrent };
-export type { Experience };
+] satisfies readonly Experience[];
