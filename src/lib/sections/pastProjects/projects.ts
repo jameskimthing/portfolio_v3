@@ -160,6 +160,8 @@ export const archiveProjects = [
 		summary:
 			'MNIST handwritten-digit classifier with forward and backward propagation implemented in NumPy only (784-256-128-32-10), reaching 95.21% test accuracy.',
 		technologies: ['Python', 'NumPy'],
+		image: '/pastProjects/mnist-examples.png',
+		imageAlt: 'Sample MNIST digits (Josef Steppan, CC BY-SA 4.0)',
 		links: []
 	}
 ] satisfies readonly ArchiveProject[];
