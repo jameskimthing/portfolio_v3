@@ -101,9 +101,24 @@ export const skillGroups = [
 	{ label: 'Languages', skills: ['TypeScript/JavaScript', 'Python', 'C++'] },
 	{
 		label: 'Web & Backend',
-		skills: ['React', 'Next.js', 'Node.js/Express', 'FastAPI', 'REST APIs']
+		skills: [
+			'React',
+			'Next.js',
+			'SvelteKit',
+			'Tailwind CSS',
+			'Node.js/Express',
+			'FastAPI',
+			'REST APIs',
+			'Puppeteer'
+		]
 	},
-	{ label: 'Cloud & Tools', skills: ['AWS', 'Firebase/Firestore', 'Docker', 'Linux', 'Git'] },
-	{ label: 'Data', skills: ['scikit-learn', 'pandas', 'NumPy'] },
+	{
+		label: 'Cloud & Tools',
+		skills: ['AWS', 'GCP', 'Firebase/Firestore', 'Vercel', 'fly.io', 'Docker', 'Linux', 'Git']
+	},
+	{
+		label: 'Data',
+		skills: ['Supabase/PostgreSQL (pgvector)', 'scikit-learn', 'pandas', 'NumPy', 'FFmpeg']
+	},
 	{ label: 'Spoken', skills: ['English (native)', 'Korean (native)'] }
 ] as const;

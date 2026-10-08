@@ -13,31 +13,31 @@ export type FeaturedProject = ProjectBase & {
 	imageAlt?: string;
 	visual?: 'infrastructure' | 'reporting';
 };
-export type ArchiveProject = ProjectBase & { image: string; imageAlt: string };
+export type ArchiveProject = ProjectBase & { image?: string; imageAlt?: string };
 
 export const featuredProjects = [
 	{
-		slug: 'dlab-weekly-reports',
-		title: 'D.LAB Weekly Reports',
-		period: 'Jul. – Sep. 2026',
+		slug: 'shorts-factory',
+		title: 'Shorts Factory',
+		period: 'Jun. – Aug. 2026',
 		summary:
-			'Independently built and deployed a weekly reporting platform for planned rollout to 6–10 teachers and approximately 40 students, replacing individual Google Docs with centralized report histories and mobile-friendly viewing.',
+			'Reddit-to-YouTube Shorts pipeline that turns stories into narrated, captioned 1080×1920 vertical videos with YouTube metadata, self-hosted on Hetzner.',
 		technologies: [
-			'Next.js',
-			'TypeScript',
-			'Firebase',
-			'Google Drive',
-			'OAuth',
-			'Puppeteer',
-			'Vercel'
+			'Python',
+			'FastAPI',
+			'FFmpeg',
+			'ElevenLabs',
+			'Gemini TTS',
+			'Whisper',
+			'YouTube API'
 		],
 		highlights: [
-			'Integrated Google Drive for report PDFs/media through teacher-authorized OAuth uploads and service-account reads; scoped editing and dashboards by role and student relationships.',
-			'Implemented optimistic concurrency control, immutable report revisions, and compensating cleanup for conflicting edits and partial Firestore/Google Drive failures.',
-			'Built protected PDF generation with Puppeteer/Chromium and short-lived render tokens, staged media uploads, byte-range video streaming, integration tests, and smoke tests.'
+			'Automates TTS narration, word-level captions, AI scene images, and FFmpeg rendering with a human review step; supports six languages (en, ko, ja, hi, de, zh).',
+			'Checkpoints every stage of a 30+ minute render so failed runs resume from the step that failed; the CLI and web jobs share one render engine.'
 		],
 		links: [],
-		visual: 'reporting'
+		image: '/pastProjects/shorts-factory.png',
+		imageAlt: 'Shorts Factory generated title card for a Reddit story'
 	},
 	{
 		slug: 'minimalist-focus-timer',
@@ -152,5 +152,14 @@ export const archiveProjects = [
 			{ label: 'Live', href: 'https://jameskimthing.github.io/l-system-playground/' },
 			{ label: 'GitHub', href: 'https://github.com/jameskimthing/l-system-playground' }
 		]
+	},
+	{
+		slug: 'neural-network-from-scratch',
+		title: 'Neural Network from Scratch',
+		period: '2026',
+		summary:
+			'MNIST handwritten-digit classifier with forward and backward propagation implemented in NumPy only (784-256-128-32-10), reaching 95.21% test accuracy.',
+		technologies: ['Python', 'NumPy'],
+		links: []
 	}
 ] satisfies readonly ArchiveProject[];

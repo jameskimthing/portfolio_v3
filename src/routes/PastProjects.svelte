@@ -162,7 +162,7 @@
 		<div class="border-line mt-24 border-t pt-10 md:mt-28 md:pt-12">
 			<div class="mb-8 flex flex-wrap items-end justify-between gap-3">
 				<h3 class="editorial-heading text-3xl md:text-5xl">
-					Selected archive<span class="text-accent"> / 05</span>
+					Selected archive<span class="text-accent"> / 06</span>
 				</h3>
 				<p class="eyebrow text-muted">More experiments, same curiosity</p>
 			</div>
@@ -173,19 +173,21 @@
 						aria-labelledby={`${project.slug}-title`}
 						class="bg-paper reveal border-line flex flex-col overflow-hidden border-r border-b"
 					>
-						<figure class="border-line bg-soft border-b">
-							<img
-								src={project.image}
-								alt={project.imageAlt}
-								loading="lazy"
-								class="aspect-[16/8] w-full object-cover object-top grayscale"
-							/>
-							<figcaption
-								class="text-muted border-line border-t px-5 py-3 font-mono text-[0.65rem] tracking-[0.12em] uppercase"
-							>
-								{project.imageAlt}
-							</figcaption>
-						</figure>
+						{#if project.image}
+							<figure class="border-line bg-soft border-b">
+								<img
+									src={project.image}
+									alt={project.imageAlt}
+									loading="lazy"
+									class="aspect-[16/8] w-full object-cover object-top grayscale"
+								/>
+								<figcaption
+									class="text-muted border-line border-t px-5 py-3 font-mono text-[0.65rem] tracking-[0.12em] uppercase"
+								>
+									{project.imageAlt}
+								</figcaption>
+							</figure>
+						{/if}
 						<div class="flex flex-1 flex-col p-6">
 							<p class="eyebrow text-accent">Archive / {project.period}</p>
 							<h4
