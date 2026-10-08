@@ -36,7 +36,7 @@ export const featuredProjects = [
 			'Checkpoints every stage of a 30+ minute render so failed runs resume from the step that failed; the CLI and web jobs share one render engine.'
 		],
 		links: [],
-		image: '/pastProjects/shorts-factory.png',
+		image: '/pastProjects/shorts-factory-output.png',
 		imageAlt:
 			'Shorts Factory output: a finished vertical video with word-level captions and its generated title screen'
 	},
