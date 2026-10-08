@@ -37,7 +37,8 @@ export const featuredProjects = [
 		],
 		links: [],
 		image: '/pastProjects/shorts-factory.png',
-		imageAlt: 'Shorts Factory generated title card for a Reddit story'
+		imageAlt:
+			'Shorts Factory output: a finished vertical video with word-level captions and its generated title screen'
 	},
 	{
 		slug: 'minimalist-focus-timer',
